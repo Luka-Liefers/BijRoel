@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact — Bij Roel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=12">
+<link rel="stylesheet" href="subpages.css?v=1">
+</head>
+<body class="subpage" data-screen-label="Contact">
+
+<!-- NAV -->
+<div class="awning"></div>
+<nav class="nav scrolled">
+  <a href="index.html" class="nav-logo">Bij Roel</a>
+  <div class="nav-items">
+    <a href="menukaart.html" class="nav-link">Menukaart</a>
+    <a href="workshops.html" class="nav-link">Barista Workshop</a>
+    <a href="bonen.html" class="nav-link">Bonen</a>
+    <a href="contact.html" class="nav-link active">Contact</a>
+  </div>
+  <a href="contact.html" class="nav-cta">Reserveer een tafel</a>
+</nav>
+
+<main class="subpage-inner">
+  <h1 class="subpage-title">Contact &amp; Bezoek</h1>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="intro-text">
+      <p class="lead">Kom langs voor een kop koffie, stel je vragen over onze bonen of reserveer een tafel voor je groep. We zijn er bijna elke dag.</p>
+
+      <ul class="intro-list">
+        <li>Oude Kijk in 't Jatstraat 27, Groningen</li>
+        <li>Maandag t/m vrijdag: 07:30 – 17:00</li>
+        <li>Zaterdag &amp; zondag: 09:30 – 17:00</li>
+      </ul>
+
+      <div class="intro-actions">
+        <a class="btn btn-brown" href="mailto:koffie@bijroel.nl">
+          Mail ons
+          <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a class="btn btn-cream" href="#bericht" style="border:1px solid var(--line);">Stuur een bericht</a>
+      </div>
+
+      <p class="intro-meta">Voor groepen vanaf 4 personen reserveren we graag van tevoren.</p>
+    </div>
+
+    <div class="intro-image">
+      <img src="assets/storefront-bw.png" alt="Bij Roel — Oude Kijk in 't Jatstraat 27" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- VISIT INFO CARDS -->
+  <h2 class="sub-section-title">Hoe ons te bereiken</h2>
+  <div class="learn-grid">
+    <div class="callout">
+      <h4>Adres</h4>
+      <p>
+        Oude Kijk in 't Jatstraat 27<br>
+        9712 EB Groningen<br><br>
+        Op loopafstand van het Academiegebouw en de Vismarkt. Gratis fietsparkeren voor de deur.
+      </p>
+    </div>
+    <div class="callout">
+      <h4>Openingstijden</h4>
+      <p style="font-family:'JetBrains Mono',monospace; font-size:13px; line-height:2;">
+        MA &nbsp;– VR &nbsp;&nbsp; 07:30 – 17:00<br>
+        ZA &amp; ZO &nbsp;&nbsp; 09:30 – 17:00<br>
+        <span style="color:var(--muted); font-size:11.5px;">Op feestdagen kunnen de tijden afwijken.<br>Check onze Instagram voor actuele info.</span>
+      </p>
+    </div>
+    <div class="callout">
+      <h4>E-mail &amp; Socials</h4>
+      <p>
+        <a href="mailto:koffie@bijroel.nl" style="color:var(--orange); font-weight:600;">koffie@bijroel.nl</a><br><br>
+        Volg ons op Instagram en Facebook voor seizoensspecials, latte art en het laatste nieuws uit de winkel.
+      </p>
+    </div>
+  </div>
+
+  <!-- RESERVEREN CALLOUT -->
+  <div class="shop-highlight">
+    <p><strong>Reserveren voor een groep?</strong> Voor 4 of meer personen reserveren we graag van tevoren een tafel. Stuur een bericht hieronder of mail direct naar <a href="mailto:koffie@bijroel.nl" style="color:var(--orange);">koffie@bijroel.nl</a> — we reageren binnen één werkdag.</p>
+  </div>
+
+  <!-- CONTACT FORM -->
+  <h2 class="sub-section-title" id="bericht">Stuur ons een bericht</h2>
+  <div class="signup-form">
+    <form onsubmit="event.preventDefault();">
+      <div class="form-grid">
+        <div class="field">
+          <label>Naam *</label>
+          <input type="text" placeholder="Je naam" required />
+        </div>
+        <div class="field">
+          <label>E-mailadres *</label>
+          <input type="email" placeholder="je@email.nl" required />
+        </div>
+        <div class="field">
+          <label>Onderwerp</label>
+          <select>
+            <option>Tafelreservering</option>
+            <option>Vraag over koffie of bonen</option>
+            <option>Barista workshop</option>
+            <option>Cadeaubon</option>
+            <option>Overig</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Aantal personen</label>
+          <select>
+            <option>1 – 2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6+</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label>Bericht *</label>
+          <textarea placeholder="Je vraag of opmerking..." required></textarea>
+        </div>
+      </div>
+      <div class="form-submit">
+        <button type="submit">Verstuur bericht</button>
+        <span class="form-disclaimer">*Je gegevens worden alleen gebruikt om je bericht te beantwoorden.</span>
+      </div>
+    </form>
+  </div>
+
+  <!-- FAQ -->
+  <h2 class="sub-section-title" id="faq">Veelgestelde vragen</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <button class="faq-q">Kan ik een tafel reserveren?</button>
+      <div class="faq-a"><div class="faq-a-inner">Voor groepen vanaf 4 personen reserveren we graag van tevoren. Voor kleinere groepen werken we op basis van vrije inloop — je bent altijd welkom.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Hoe lang van tevoren moet ik reserveren?</button>
+      <div class="faq-a"><div class="faq-a-inner">We raden aan minimaal 2 dagen van tevoren te reserveren, zeker in het weekend. Voor grote groepen (8+) liever een week van tevoren.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Zijn jullie ook op feestdagen open?</button>
+      <div class="faq-a"><div class="faq-a-inner">Op de meeste feestdagen zijn we gewoon open, maar de tijden kunnen afwijken. Volg onze Instagram of stuur een mailtje om zeker te weten of we open zijn.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Is er parkeergelegenheid in de buurt?</button>
+      <div class="faq-a"><div class="faq-a-inner">Fietsen kan gratis voor de deur. Met de auto zijn er betaalde parkeerplaatsen op de Vismarkt en in de omliggende straten. Groningen is het makkelijkst per fiets of openbaar vervoer te bereiken.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Kan ik ook terecht voor een zakelijke afspraak of vergadering?</button>
+      <div class="faq-a"><div class="faq-a-inner">Zeker. We hebben een rustige hoek voor kleine vergaderingen. Neem contact op voor de mogelijkheden — we denken graag mee over koffie en iets lekkers erbij.</div></div>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Bij Roel</div>
+      <p class="footer-tag">Waar koffie en kunst<br>samenkomen — sinds 2018.</p>
+    </div>
+    <div>
+      <h4>Contactgegevens</h4>
+      <ul class="footer-list">
+        <li>Oude Kijk in 't Jatstraat 27</li>
+        <li>9712 EB Groningen</li>
+        <li><a href="mailto:koffie@bijroel.nl">koffie@bijroel.nl</a></li>
+        <li style="margin-top: 12px; color: rgba(245,239,230,0.5); font-family: 'JetBrains Mono', monospace; font-size: 12px;">MA – VR &nbsp; 07:30 — 17:00<br>ZA &amp; ZO &nbsp; 09:30 — 17:00</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Pagina's</h4>
+      <ul class="footer-list">
+        <li><a href="menukaart.html">Menukaart</a></li>
+        <li><a href="workshops.html">Barista Workshop</a></li>
+        <li><a href="bonen.html">Bonen</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Volg ons &amp; blijf op de hoogte</h4>
+      <ul class="footer-list" style="flex-direction: row; gap: 16px; margin-bottom: 8px;">
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+      </ul>
+      <form class="footer-newsletter" onsubmit="event.preventDefault();">
+        <input type="email" placeholder="je@email.nl" required />
+        <button type="submit">Aanmelden</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom" style="margin-top: 64px;">
+    <span>© 2026 Bij Roel — Alle rechten voorbehouden</span>
+    <span>Gebrouwen met liefde in Groningen</span>
+  </div>
+</footer>
+
+<script src="subpages.js?v=1"></script>
+</body>
+</html>

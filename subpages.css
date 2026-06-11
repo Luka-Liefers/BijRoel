@@ -1,0 +1,723 @@
+/* Bij Roel — subpage shared styles
+   Builds on styles.css (loaded first). Replaces hero with a quieter
+   page header, defines content layout, FAQ accordion, form. */
+
+/* ─── Page header (subpage-only) ───────────────────────── */
+.subpage {
+  position: relative;
+  padding-top: 110px; /* clear the fixed nav */
+  background: var(--cream);
+  min-height: 100vh;
+}
+
+.subpage-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 48px 80px;
+}
+
+.subpage-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  color: var(--brown);
+  text-align: center;
+  margin: 24px 0 40px;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+/* tighten nav on subpages — always cream pill, no scroll-state needed */
+.subpage .nav { background: var(--cream); border: 1px solid var(--line); }
+
+/* ─── Two-column intro (text + image) ──────────────────── */
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: start;
+  margin-bottom: 80px;
+}
+.intro-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+}
+.intro-text p { margin-bottom: 18px; color: var(--brown-2); }
+.intro-text .lead { font-size: 17px; line-height: 1.65; color: var(--brown); margin-bottom: 26px; }
+
+.intro-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 26px 0 28px;
+  padding: 0;
+}
+.intro-list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 15px;
+  color: var(--brown-2);
+  line-height: 1.55;
+}
+.intro-list li::before {
+  content: "✓";
+  color: var(--orange);
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.intro-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 8px 0 24px;
+}
+.intro-actions .btn {
+  font-size: 14px;
+  padding: 13px 22px;
+}
+
+.intro-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+/* image side */
+.intro-image {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  box-shadow: 0 24px 60px rgba(75,46,29,0.18);
+  background: var(--cream-2);
+}
+.intro-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.intro-image.tall { aspect-ratio: 4 / 5; }
+.intro-image.poster { aspect-ratio: 1 / 1.25; padding: 28px; background: var(--cream); display: flex; align-items: center; justify-content: center; }
+.intro-image.poster img { object-fit: contain; }
+
+/* ─── Section header (subpage) ─────────────────────────── */
+.sub-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(26px, 3.4vw, 34px);
+  font-weight: 700;
+  color: var(--brown);
+  text-align: center;
+  margin: 60px 0 28px;
+  letter-spacing: -0.3px;
+}
+
+/* ─── Content blocks (numbered steps / split callouts) ─── */
+.content-block {
+  font-family: 'Inter', sans-serif;
+  color: var(--brown-2);
+  line-height: 1.65;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+.content-block p { margin-bottom: 14px; }
+.content-block ul { padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.content-block ul li { padding-left: 22px; position: relative; }
+.content-block ul li::before {
+  content: "●";
+  color: var(--orange);
+  font-size: 8px;
+  position: absolute; left: 4px; top: 8px;
+}
+.content-block strong { color: var(--brown); font-weight: 600; }
+
+/* two-card callout (used for Duurzaamheid op bonen page) */
+.callout-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 24px 0 40px;
+}
+.callout {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px 26px;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.callout:hover {
+  border-color: var(--orange);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(75,46,29,0.1);
+}
+.callout h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--brown);
+  margin-bottom: 10px;
+}
+.callout p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--brown-2);
+}
+
+/* "Buy direct in shop" highlight box */
+.shop-highlight {
+  background: var(--cream-2);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 28px 32px;
+  text-align: center;
+  margin: 24px 0 60px;
+}
+.shop-highlight p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--brown-2);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ─── Workshop "Dit ga je leren" cards ─────────────────── */
+.learn-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 8px 0 56px;
+}
+.learn-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.learn-card:hover {
+  border-color: var(--orange);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(75,46,29,0.1);
+}
+.learn-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--cream-2);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--orange);
+  margin-bottom: 4px;
+  transition: background 0.3s;
+}
+.learn-card:hover .learn-icon { background: var(--orange); color: var(--cream); }
+.learn-icon svg { width: 18px; height: 18px; }
+.learn-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--brown);
+}
+.learn-card p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--brown-2);
+}
+
+/* ─── Workshop signup form ─────────────────────────────── */
+.signup-form {
+  background: var(--cream-2);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 32px 36px 36px;
+  margin: 8px 0 60px;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px 18px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.field.full { grid-column: 1 / -1; }
+.field label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--brown);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.field input,
+.field select,
+.field textarea {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(194,80,42,0.12);
+}
+.field textarea { resize: vertical; min-height: 90px; }
+.field input::placeholder, .field textarea::placeholder { color: var(--muted); opacity: 0.7; }
+
+.form-submit {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 22px;
+}
+.form-submit button {
+  background: var(--brown);
+  color: var(--cream);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.form-submit button:hover { background: var(--brown-2); transform: translateY(-1px); }
+.form-disclaimer {
+  font-size: 12px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ─── FAQ accordion ────────────────────────────────────── */
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 8px 0 80px;
+}
+.faq-item {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: box-shadow 0.25s;
+}
+.faq-item:hover { box-shadow: 0 6px 20px rgba(75,46,29,0.06); }
+.faq-q {
+  width: 100%;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--brown);
+  padding: 18px 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: background 0.2s;
+}
+.faq-q::before {
+  content: "▸";
+  color: var(--orange);
+  font-size: 12px;
+  transition: transform 0.25s;
+  flex-shrink: 0;
+}
+.faq-item.open .faq-q::before { transform: rotate(90deg); }
+.faq-q:hover { background: rgba(194,80,42,0.04); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.2,0.7,0.2,1);
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--brown-2);
+}
+.faq-a-inner { padding: 0 22px 20px 46px; }
+.faq-item.open .faq-a { max-height: 400px; }
+
+/* ─── Coffee bag placeholder (bonen image) ─────────────── */
+.bag-illustration {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6b4a32 0%, #4b2e1d 60%, #3a2415 100%);
+  position: relative;
+  overflow: hidden;
+}
+.bag-illustration::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(194,80,42,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, rgba(0,0,0,0.3) 0%, transparent 50%);
+}
+.bag {
+  width: 65%;
+  aspect-ratio: 0.72;
+  background: linear-gradient(180deg, #d8c8a8 0%, #c8b598 100%);
+  border-radius: 4px 4px 8px 8px;
+  position: relative;
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.4),
+    inset 0 -20px 30px rgba(75,46,29,0.15);
+  padding: 40px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.bag::before {
+  /* fold at top */
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 22px;
+  background: linear-gradient(180deg, rgba(75,46,29,0.4) 0%, transparent 100%);
+  border-radius: 4px 4px 0 0;
+  border-bottom: 1px solid rgba(75,46,29,0.18);
+}
+.bag-logo {
+  border: 2px solid var(--brown);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-family: 'Alfa Slab One', serif;
+  font-size: 16px;
+  color: var(--brown);
+  letter-spacing: 0.5px;
+}
+.bag-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  color: var(--brown-2);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-align: center;
+  line-height: 1.6;
+  border-top: 1px dashed rgba(75,46,29,0.3);
+  padding-top: 12px;
+  width: 100%;
+}
+.bag-stamp {
+  position: absolute;
+  bottom: 30%;
+  right: -10px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 11px;
+  font-weight: 700;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.1;
+  transform: rotate(-12deg);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* ─── Workshop poster placeholder ──────────────────────── */
+.poster-mock {
+  width: 100%;
+  height: 100%;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+}
+.poster-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  color: var(--brown-2);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.poster-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--brown);
+  line-height: 1;
+  margin-bottom: 18px;
+}
+.poster-pours {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 12px 0 18px;
+  flex-grow: 1;
+  align-content: center;
+}
+.poster-pour {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.poster-cup {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--cream-2);
+  border: 1.5px solid var(--brown);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+}
+.poster-pour-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px;
+  color: var(--brown-2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.poster-pour:nth-child(1) .poster-cup { background: #f0e3c8; }
+.poster-pour:nth-child(2) .poster-cup { background: #e8d5b0; }
+.poster-pour:nth-child(3) .poster-cup { background: #d0a878; }
+.poster-pour:nth-child(4) .poster-cup { background: var(--orange); border-color: var(--orange-2); }
+.poster-foot {
+  text-align: center;
+  font-family: 'Alfa Slab One', serif;
+  font-size: 16px;
+  color: var(--brown);
+  letter-spacing: 0.5px;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+  margin-top: auto;
+}
+.poster-stamp {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: var(--orange);
+  color: var(--cream);
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 11px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transform: rotate(8deg);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+}
+
+/* ─── Full menukaart grid ───────────────────────────────── */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 8px 0 16px;
+  align-items: start;
+}
+.menu-bottom-pair {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+  align-items: start;
+}
+.menu-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* individual item row inside a callout */
+.menu-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(75,46,29,0.07);
+}
+.menu-row:last-child { border-bottom: none; }
+
+.menu-price {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  color: var(--orange);
+  flex-shrink: 0;
+  min-width: 44px;
+}
+.menu-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--brown);
+  flex: 1;
+  letter-spacing: 0.01em;
+}
+.menu-name .menu-sub {
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--muted);
+  font-style: italic;
+  margin-left: 4px;
+}
+
+/* item with a description line below */
+.menu-entry {
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(75,46,29,0.07);
+}
+.menu-entry:last-child { border-bottom: none; }
+.menu-entry-top {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.menu-entry-desc {
+  font-size: 11.5px;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 2px;
+  padding-left: 0;
+}
+
+.menu-note {
+  font-size: 11.5px;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(75,46,29,0.2);
+  line-height: 1.5;
+}
+.menu-alert {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(75,46,29,0.2);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--orange);
+  text-align: center;
+}
+
+/* Rare Drankjes — 2-col inner grid */
+.menu-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+}
+
+/* Soep featured callout */
+.callout-soep {
+  text-align: center;
+  background: var(--cream-2);
+}
+.callout-soep .soep-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 6px;
+}
+.callout-soep .soep-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--brown);
+  line-height: 1.1;
+}
+.callout-soep .soep-price {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--brown);
+  margin-top: 8px;
+}
+.callout-soep .soep-meta {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* Koffie voor Thuis featured callout */
+.callout-thuis {
+  text-align: center;
+  background: var(--brown);
+  border-color: var(--brown);
+}
+.callout-thuis:hover { border-color: var(--orange-2); }
+.callout-thuis h4 { color: var(--cream); }
+.callout-thuis .thuis-sub {
+  font-size: 12px;
+  color: rgba(245,239,230,0.65);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+.callout-thuis .thuis-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--cream);
+  margin-top: 10px;
+}
+
+/* Cadeautje callout note */
+.menu-cadeautje {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: var(--cream-2);
+  border-radius: 8px;
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--brown);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ─── Responsive ───────────────────────────────────────── */
+@media (max-width: 880px) {
+  .subpage-inner { padding: 24px 24px 60px; }
+  .intro { grid-template-columns: 1fr; gap: 36px; }
+  .callout-pair { grid-template-columns: 1fr; }
+  .learn-grid { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  .intro-image { aspect-ratio: 4 / 3; max-width: 480px; margin: 0 auto; }
+  .menu-grid { grid-template-columns: 1fr 1fr; }
+  .menu-bottom-pair { grid-template-columns: 1fr; }
+  .menu-2col { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .menu-grid { grid-template-columns: 1fr; }
+}
