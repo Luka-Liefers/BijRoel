@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Barista Workshop — Bij Roel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=12">
+<link rel="stylesheet" href="subpages.css?v=1">
+<style>
+.bean-decor {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.bean-decor img {
+  position: absolute;
+  opacity: 0.14;
+}
+/* beans */
+.bean-1 { width: 280px; top: -75px;   left: -80px;  transform: rotate(-18deg); }
+.bean-2 { width: 145px; top: 42%;     left: -55px;  transform: rotate(-72deg); }
+.bean-3 { width: 170px; bottom: 80px;  left: -40px;  transform: rotate(195deg); }
+/* cappuccinos */
+.cap-1  { width: 220px; top: -50px;   right: -65px; transform: rotate(30deg);  }
+.cap-2  { width: 175px; top: 36%;     right: -60px; transform: rotate(-15deg); }
+.cap-3  { width: 150px; top: 78%;     right: -45px; transform: rotate(20deg);  }
+.subpage-inner, .footer { position: relative; z-index: 1; }
+</style>
+</head>
+<body class="subpage" data-screen-label="Workshops">
+
+<!-- DECORATIONS -->
+<div class="bean-decor" aria-hidden="true">
+  <img src="assets/cappuccino.png"  alt="" class="bean-1">
+  <img src="uploads/koffieboon.png" alt="" class="bean-2">
+  <img src="assets/cappuccino.png"  alt="" class="bean-3">
+  <img src="uploads/koffieboon.png" alt="" class="cap-1">
+  <img src="assets/cappuccino.png"  alt="" class="cap-2">
+  <img src="uploads/koffieboon.png" alt="" class="cap-3">
+</div>
+
+<!-- NAV -->
+<div class="awning"></div>
+<nav class="nav scrolled">
+  <a href="index.html" class="nav-logo">Bij Roel</a>
+  <div class="nav-items">
+    <a href="menukaart.html" class="nav-link">Menukaart</a>
+    <a href="workshops.html" class="nav-link active">Barista Workshop</a>
+    <a href="bonen.html" class="nav-link">Bonen</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+  <a href="contact.html" class="nav-cta">Reserveer een tafel</a>
+</nav>
+
+<main class="subpage-inner">
+  <h1 class="subpage-title">Barista Workshop — leer in 1.5 uur<br>koffie maken als een pro</h1>
+
+  <!-- INTRO: text + poster -->
+  <section class="intro">
+    <div class="intro-text">
+      <p class="lead">Barista cursus voor beginners en hobby-barista's. Leer espresso zetten, melk opschuimen en latte art in 1.5 uur.</p>
+
+      <ul class="intro-list">
+        <li>Vanaf 4 personen</li>
+        <li>Inclusief specialty koffie</li>
+        <li>Geschikt voor beginners en hobby-barista's</li>
+      </ul>
+
+      <div class="intro-actions">
+        <a class="btn btn-brown" href="#inschrijven">
+          Reserveer je plek
+          <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a class="btn btn-cream" href="#leren" style="border:1px solid var(--line);">Meer info</a>
+      </div>
+
+      <p class="intro-meta">€45 p.p. · Duur ca. 1.5 uur · Locatie: Bij Roel</p>
+    </div>
+
+    <div class="intro-image poster">
+      <div class="poster-mock">
+        <div class="poster-stamp">vanaf €45</div>
+        <div class="poster-eyebrow">Barista workshop · Bij Roel</div>
+        <div class="poster-title">Pour like<br>a pro.</div>
+        <div class="poster-pours">
+          <div class="poster-pour"><div class="poster-cup">·</div><div class="poster-pour-label">Espresso</div></div>
+          <div class="poster-pour"><div class="poster-cup">◐</div><div class="poster-pour-label">Latte</div></div>
+          <div class="poster-pour"><div class="poster-cup">◑</div><div class="poster-pour-label">Cappu</div></div>
+          <div class="poster-pour"><div class="poster-cup">●</div><div class="poster-pour-label">Flat W.</div></div>
+        </div>
+        <div class="poster-foot">BIJ ROEL</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIT GA JE LEREN -->
+  <h2 class="sub-section-title" id="leren">Dit ga je leren</h2>
+  <div class="learn-grid">
+    <div class="learn-card">
+      <div class="learn-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v4M16 3v4M5 7h14l-1 13H6L5 7z"/><path d="M12 11v5"/></svg>
+      </div>
+      <h4>Espresso fundamentals</h4>
+      <p>Je leert alles over malen, doseren en tampen. We behandelen de invloed van extractietijd, dosering op smaakbalans, zodat je begrijpt hoe je elke espresso kunt perfectioneren.</p>
+    </div>
+    <div class="learn-card">
+      <div class="learn-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12c2-2 4-2 6 0s4 2 6 0"/><path d="M5 17h14"/><circle cx="12" cy="6" r="2"/></svg>
+      </div>
+      <h4>Melk &amp; latte art</h4>
+      <p>Ontdek hoe je de perfecte melktextuur maakt voor cappuccino of flat white. Je oefent het opschuimen, schenken en het maken van hartjes of rosetta's in je latte.</p>
+    </div>
+    <div class="learn-card">
+      <div class="learn-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l-2 4 4 2-4 8 2-6-4-2 4-6z"/></svg>
+      </div>
+      <h4>Apparaat &amp; onderhoud</h4>
+      <p>We leggen uit hoe je je machine en molen optimaal instelt voor thuisgebruik. Ook leer je hoe je onderhoud en schoonmaak uitvoert zodat je koffie altijd top smaakt.</p>
+    </div>
+  </div>
+
+  <!-- INSCHRIJVEN -->
+  <h2 class="sub-section-title" id="inschrijven">Inschrijven</h2>
+  <div class="signup-form">
+    <form>
+      <div class="form-grid">
+        <div class="field">
+          <label>Naam</label>
+          <input type="text" placeholder="bijv. Jan Jansen" required />
+        </div>
+        <div class="field">
+          <label>E-mail</label>
+          <input type="email" placeholder="bijv. jan@voorbeeld.nl" required />
+        </div>
+        <div class="field">
+          <label>Telefoon</label>
+          <input type="tel" placeholder="bijv. 06 12345678" />
+        </div>
+        <div class="field">
+          <label>Voorkeursdatum</label>
+          <input type="date" required />
+        </div>
+        <div class="field">
+          <label>Tijd</label>
+          <select>
+            <option>17:00</option>
+            <option>18:30</option>
+            <option>20:00</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Aantal personen</label>
+          <select>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label>Opmerkingen</label>
+          <textarea placeholder="Allergieën, cadeaubon, vragen..."></textarea>
+        </div>
+      </div>
+      <div class="form-submit">
+        <button type="submit">Verstuur inschrijving</button>
+        <span class="form-disclaimer">*Je gegevens worden alleen gebruikt om je inschrijving te verwerken.</span>
+      </div>
+    </form>
+  </div>
+
+  <!-- FAQ -->
+  <h2 class="sub-section-title">Veelgestelde vragen</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <button class="faq-q">Moet ik eigen materiaal meenemen?</button>
+      <div class="faq-a"><div class="faq-a-inner">Nee, alle apparatuur (espressomachine, molen, melkkannetjes, weegschalen) staat klaar. We zorgen ook voor schorten en verse bonen — neem alleen je nieuwsgierigheid mee.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Kan ik mijn inschrijving verzetten of annuleren?</button>
+      <div class="faq-a"><div class="faq-a-inner">Tot 48 uur van tevoren kun je kosteloos verzetten of annuleren. Daarna brengen we 50% in rekening, behalve bij ziekte (in overleg).</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Is de workshop geschikt voor complete beginners?</button>
+      <div class="faq-a"><div class="faq-a-inner">Absoluut. We beginnen bij de basis en bouwen op naar latte art. Ook gevorderden krijgen tips om hun techniek te verfijnen — we passen het tempo aan op de groep.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Hoeveel deelnemers zitten er in een groep?</button>
+      <div class="faq-a"><div class="faq-a-inner">Minimaal 4 en maximaal 8 personen. Zo blijft er genoeg ruimte voor persoonlijke aandacht en kun je daadwerkelijk zelf achter de machine staan.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Wat kost de workshop en wat zit er bij inbegrepen?</button>
+      <div class="faq-a"><div class="faq-a-inner">€45 per persoon. Inclusief: alle ingrediënten, gebruik van apparatuur, een goodie bag met 250g vers gebrande bonen om thuis verder te oefenen.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Waar vindt de barista workshop plaats?</button>
+      <div class="faq-a"><div class="faq-a-inner">Gewoon in onze winkel: Oude Kijk in 't Jatstraat 27, Groningen. Na sluitingstijd hebben we de zaak voor onszelf.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Kan ik de workshop ook cadeau doen?</button>
+      <div class="faq-a"><div class="faq-a-inner">Ja! We maken een persoonlijke cadeaubon (digitaal of in een mooie envelop). Mail <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="147f7b72727d7154767d7e667b71783a7a78">[email&#160;protected]</a> met de naam van de ontvanger en wij regelen het.</div></div>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Bij Roel</div>
+      <p class="footer-tag">Waar koffie en kunst<br>samenkomen — sinds 2018.</p>
+    </div>
+    <div>
+      <h4>Contactgegevens</h4>
+      <ul class="footer-list">
+        <li>Oude Kijk in 't Jatstraat 27</li>
+        <li>9712 EB Groningen</li>
+        <li><a href="/cdn-cgi/l/email-protection#bed5d1d8d8d7dbfedcd7d4ccd1dbd290d0d2"><span class="__cf_email__" data-cfemail="2c47434a4a45496c4e45465e434940024240">[email&#160;protected]</span></a></li>
+        <li style="margin-top: 12px; color: rgba(245,239,230,0.5); font-family: 'JetBrains Mono', monospace; font-size: 12px;">MA – VR &nbsp; 07:30 — 17:00<br>ZA &amp; ZO &nbsp; 09:30 — 17:00</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Pagina's</h4>
+      <ul class="footer-list">
+        <li><a href="menukaart.html">Menukaart</a></li>
+        <li><a href="workshops.html">Barista Workshop</a></li>
+        <li><a href="bonen.html">Bonen</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Volg ons &amp; blijf op de hoogte</h4>
+      <ul class="footer-list" style="flex-direction: row; gap: 16px; margin-bottom: 8px;">
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+      </ul>
+      <form class="footer-newsletter" onsubmit="event.preventDefault();">
+        <input type="email" placeholder="je@email.nl" required />
+        <button type="submit">Aanmelden</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom" style="margin-top: 64px;">
+    <span>© 2026 Bij Roel — Alle rechten voorbehouden</span>
+    <span>Gebrouwen met liefde in Groningen</span>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="subpages.js?v=1"></script>
+</body>
+</html>
